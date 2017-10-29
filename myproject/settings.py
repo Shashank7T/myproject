@@ -25,7 +25,7 @@ SECRET_KEY = 'db38tn$i2m8z%0s=fv5)26ynf+f(xzrghj#&-+#6x%a$awy=hj'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['naaproject.herokuapp.com']
+ALLOWED_HOSTS = ['naaproject.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -125,10 +125,10 @@ import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
-TATICFILES_DIRS = [
+STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-STATIC_ROOT = os.path.join((BASE_DIR), "static")
+STATIC_ROOT = os.path.join((BASE_DIR), "staticfiles")
 STATIC_URL = '/static/'
